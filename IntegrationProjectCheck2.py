@@ -88,6 +88,7 @@ def initialize_timer():
     return round_timer
 
 def cycle_round_timer(first, last):
+    # The last digit should be used in summon_zappa, when I learn how to run 2 functions at once
     time.sleep(0.8)
     if (last == 0):
         last = 9
@@ -263,6 +264,7 @@ def run_ggxrd_calc():
     display_game_menu()
 
 def initialize_ggxrd():
+    # Sets values for GGXrd calc that don't need to be updated every loop. Needed for chars with unique stats.
     try:
         total_health = int(input("What's the enemy's starting health? (integer 1-420): "))
         guts_rating = int(input("What's your opponent's Guts rating? (integer 0-5): "))
@@ -282,6 +284,8 @@ def initialize_ggxrd():
         main_menu()
 
 def get_guts(total, max, guts):
+    # roundabout way of making the health gauge appear lower than how much health you actually have. based on
+    # the guts stat, there's a % scaling value applied to the move to make it do less damage when at low health.
     if (total < (max * .1)):
         guts_scaling = float((40 - int((guts * .2) * 4)) * 0.01)
     elif (total < (max * .2)):
@@ -317,7 +321,7 @@ def check_health(total_health):
 def display_gauges(move_damage, total_health, risc, max_health, proration, move_count, combo, guts_scaling):
     filled_gauge = round(20 * (total_health / max_health))
     empty_gauge = 20 - filled_gauge
-    print("HP:" , "[" + "#"*filled_gauge + " "*empty_gauge + "]")
+    print("\nHP:" , "[" + "#"*filled_gauge + " "*empty_gauge + "]")
     print("Total Health:", total_health, "/ 420", sep=' ')
     print("RISC Gauge:  ", risc, "/ 100", sep=' ', end='\n\n')
     print("Combo:", move_count, sep=' ')
