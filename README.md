@@ -11,10 +11,3 @@ in a fun game context that show off what I learned about Python.
 I recommend running the file in it's own folder. While it doesn't touch any
 of the files where it's in, it makes a \characterFiles directory in the
 directory it's in, so it might help to run it in it's own folder.
-
-
-Sources:
-https://gamefaqs.gamespot.com/ps/197341-final-fantasy-vii/faqs/22395
-https://www.w3schools.com/
-https://www.tutorialspoint.com/python/index.htm
-https://realpython.com/
